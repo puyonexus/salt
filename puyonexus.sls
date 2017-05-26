@@ -30,7 +30,7 @@ puyonexus:
     - require:
       - user: puyonexus
 
-/home/puyonexus/apps/forum-files:
+/home/puyonexus/volumes/forum-files:
   file.directory:
     - user: puyonexus
     - group: www-data
@@ -40,7 +40,7 @@ puyonexus:
     - require:
       - user: puyonexus
 
-/home/puyonexus/apps/wiki-images:
+/home/puyonexus/volumes/wiki-images:
   file.directory:
     - user: puyonexus
     - group: www-data

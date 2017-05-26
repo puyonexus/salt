@@ -4,6 +4,9 @@ zsh:
 git:
   pkg.installed
 
+composer:
+  pkg.installed
+
 puyonexus:
   user.present:
     - fullname: Puyo Nexus
@@ -78,3 +81,14 @@ phpbb-ext-textenhancements:
       - pkg: git
       - git: phpbb
       - file: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/textenhancements
+
+phpbb-composer:
+  composer.installed:
+    - name: /home/puyonexus/apps/forum/phpbb
+    - no_dev: true
+    - user: puyonexus
+    - require:
+      - pkg: composer
+      - git: phpbb
+      - git: phpbb-ext-additions
+      - git: phpbb-ext-textenhancements

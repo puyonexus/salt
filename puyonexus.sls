@@ -184,6 +184,14 @@ mediawiki-embedvideo:
     - require:
       - git: mediawiki
 
+mediawiki-extensions-math:
+  git.latest:
+    - name: https://github.com/puyonexus/mediawiki-extensions-math.git
+    - user: puyonexus
+    - target: /home/puyonexus/apps/wiki/mediawiki/extensions/Math
+    - require:
+      - git: mediawiki
+
 /home/puyonexus/apps/wiki/mediawiki/images:
   mount.mounted:
     - device: /home/puyonexus/volumes/wiki-images

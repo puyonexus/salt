@@ -17,27 +17,7 @@ puyonexus:
     - require:
       - pkg: zsh
 
-/home/puyonexus/apps/forum/phpbb:
-  file.directory:
-    - user: puyonexus
-    - group: www-data
-    - dir_mode: 755
-    - file_mode: 644
-    - makedirs: True
-    - require:
-      - user: puyonexus
-
-/home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions:
-  file.directory:
-    - user: puyonexus
-    - group: www-data
-    - dir_mode: 755
-    - file_mode: 644
-    - makedirs: True
-    - require:
-      - user: puyonexus
-
-/home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements:
+/home/puyonexus/apps/forum:
   file.directory:
     - user: puyonexus
     - group: www-data
@@ -53,18 +33,36 @@ phpbb:
     - user: puyonexus
     - target: /home/puyonexus/apps/forum/phpbb
     - require:
-      - file: /home/puyonexus/apps/forum/phpbb
-    - require:
       - pkg: git
-      - file: /home/puyonexus/apps/forum/phpbb
+      - file: /home/puyonexus/apps/forum
+
+/home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 755
+    - file_mode: 644
+    - makedirs: True
+    - require:
+      - git: phpbb
+      - user: puyonexus
+
+/home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 755
+    - file_mode: 644
+    - makedirs: True
+    - require:
+      - git: phpbb
+      - user: puyonexus
 
 phpbb-ext-additions:
   git.latest:
     - name: https://github.com/puyonexus/phpbb-ext-additions.git
     - user: puyonexus
     - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions
-    - require:
-      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions
     - require:
       - pkg: git
       - git: phpbb
@@ -75,8 +73,6 @@ phpbb-ext-textenhancements:
     - name: https://github.com/puyonexus/phpbb-ext-textenhancements.git
     - user: puyonexus
     - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements
-    - require:
-      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements
     - require:
       - pkg: git
       - git: phpbb

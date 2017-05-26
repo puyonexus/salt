@@ -27,7 +27,7 @@ puyonexus:
     - require:
       - user: puyonexus
 
-/home/puyonexus/apps/forum/phpbb/ext/puyonexus/additions:
+/home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions:
   file.directory:
     - user: puyonexus
     - group: www-data
@@ -37,7 +37,7 @@ puyonexus:
     - require:
       - user: puyonexus
 
-/home/puyonexus/apps/forum/phpbb/ext/puyonexus/textenhancements:
+/home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements:
   file.directory:
     - user: puyonexus
     - group: www-data
@@ -62,29 +62,29 @@ phpbb-ext-additions:
   git.latest:
     - name: https://github.com/puyonexus/phpbb-ext-additions.git
     - user: puyonexus
-    - target: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/additions
+    - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions
     - require:
-      - file: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/additions
+      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions
     - require:
       - pkg: git
       - git: phpbb
-      - file: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/additions
+      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/additions
 
 phpbb-ext-textenhancements:
   git.latest:
     - name: https://github.com/puyonexus/phpbb-ext-textenhancements.git
     - user: puyonexus
-    - target: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/textenhancements
+    - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements
     - require:
-      - file: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/textenhancements
+      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements
     - require:
       - pkg: git
       - git: phpbb
-      - file: /home/puyonexus/apps/forum/phpbb/ext/puyonexus/textenhancements
+      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus/textenhancements
 
 phpbb-composer:
   composer.installed:
-    - name: /home/puyonexus/apps/forum/phpbb
+    - name: /home/puyonexus/apps/forum/phpbb/phpBB
     - no_dev: true
     - user: puyonexus
     - require:

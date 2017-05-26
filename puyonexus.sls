@@ -176,7 +176,7 @@ mediawiki-skin-vectornexus:
     - require:
       - git: mediawiki
 
-mediawiki-skin-vectornexus:
+mediawiki-embedvideo:
   git.latest:
     - name: https://github.com/puyonexus/mediawiki-embedvideo.git
     - user: puyonexus

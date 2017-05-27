@@ -20,6 +20,23 @@ puyonexus:
     - require:
       - pkg: zsh
 
+oh-my-zsh:
+  git.latest:
+    - name: git://github.com/robbyrussell/oh-my-zsh.git
+    - user: puyonexus
+    - target: /home/puyonexus/.oh-my-zsh
+    - require:
+      - pkg: git
+      - user: puyonexus
+
+/home/puyonexus/.zshrc:
+  file.managed:
+    - contents:
+      - 'export ZSH=$HOME/.oh-my-zsh'
+      - 'ZSH_THEME="dieter"'
+      - 'plugins=(git)'
+      - 'source $ZSH/oh-my-zsh.sh'
+
 /home/puyonexus/volumes/forum-avatars:
   file.directory:
     - user: puyonexus

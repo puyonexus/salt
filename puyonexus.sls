@@ -31,6 +31,7 @@ oh-my-zsh:
 
 /home/puyonexus/.zshrc:
   file.managed:
+    - user: puyonexus
     - contents:
       - 'export ZSH=$HOME/.oh-my-zsh'
       - 'ZSH_THEME="dieter"'

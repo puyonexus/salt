@@ -231,7 +231,7 @@ mediawiki-extensions-{{ ext }}:
 {% endfor %}
 
 {% for skin in mwskins %}
-mediawiki-skins-{{ ext }}:
+mediawiki-skins-{{ skin }}:
   git.latest:
     - name: https://github.com/puyonexus/mediawiki-skins-{{ skin }}.git
     - user: puyonexus

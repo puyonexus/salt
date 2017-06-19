@@ -33,6 +33,18 @@
       - file: /home/puyonexus/volumes/wiki-images
 
 
+# Caddy configuration
+/etc/caddy/sites/wiki.conf:
+  file.managed:
+    - source: salt://puyonexus/files/sites/wiki.conf
+    - user: root
+    - group: root
+    - mode: 644
+    - makedirs: True
+    - require_in:
+      - service: caddy
+
+
 # App source code
 mediawiki:
   git.latest:

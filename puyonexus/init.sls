@@ -46,6 +46,7 @@ caddy-binary:
     - user: root
     - group: root
     - source: salt://puyonexus/files/caddy_v0.10.3_linux_amd64_custom.tar.gz
+    - archive_format: tar
 
 caddy-setcap:
   cmd.run:
@@ -53,6 +54,8 @@ caddy-setcap:
     - unless: getcap /opt/caddy/caddy | grep -q 'cap_net_bind_service+ep'
     - require_in:
       - service: caddy
+    - require:
+      - archive: caddy-binary
 
 /etc/systemd/system/caddy.service:
   file.managed:

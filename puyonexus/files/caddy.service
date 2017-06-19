@@ -15,11 +15,5 @@ Group=www-data
 LimitNOFILE=1048576
 LimitNPROC=64
 
-PrivateTmp=true
-PrivateDevices=true
-ProtectHome=true
-ProtectSystem=full
-ReadWriteDirectories=/etc/ssl/caddy
-
 [Install]
 WantedBy=multi-user.target

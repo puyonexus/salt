@@ -40,7 +40,7 @@ oh-my-zsh:
 # - http.cors
 # - http.prometheus
 # - http.ratelimit
-caddy:
+caddy-binary:
   archive.extracted:
     - name: /opt/caddy
     - user: root

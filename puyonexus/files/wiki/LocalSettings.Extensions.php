@@ -3,7 +3,7 @@
 if (!defined('MEDIAWIKI')) { exit; }
 
 # Extensions
-{% for ext in salt["pillar.get"]("mediawiki:extensions") %}
+{% for ext in salt["pillar.get"]("mediawiki:extensions") -%}
 wfLoadExtension('{{ ext }}');
 {% endfor %}
 

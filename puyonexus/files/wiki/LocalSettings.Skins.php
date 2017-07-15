@@ -3,7 +3,7 @@
 if (!defined('MEDIAWIKI')) { exit; }
 
 # Skins
-{% for skin in salt["pillar.get"]("mediawiki:skins") %}
+{% for skin in salt["pillar.get"]("mediawiki:skins") -%}
 wfLoadSkin('{{ skin }}');
 {% endfor %}
 

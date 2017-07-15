@@ -60,6 +60,7 @@ caddy-setcap:
 /etc/systemd/system/caddy.service:
   file.managed:
     - source: salt://puyonexus/files/caddy/caddy.service
+    - template: jinja
     - user: root
     - group: root
     - mode: 644
@@ -69,6 +70,7 @@ caddy-setcap:
 /etc/caddy/Caddyfile:
   file.managed:
     - source: salt://puyonexus/files/caddy/Caddyfile
+    - template: jinja
     - user: root
     - group: root
     - mode: 644

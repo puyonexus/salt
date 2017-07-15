@@ -35,6 +35,11 @@ oh-my-zsh:
       - 'plugins=(git)'
       - 'source $ZSH/oh-my-zsh.sh'
 
+/home/puyonexus/libs:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+
 # Caddy webserver.
 # This build has the following plugins:
 # - http.cors

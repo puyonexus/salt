@@ -15,11 +15,15 @@
   file.directory:
     - user: puyonexus
     - group: www-data
-    - dir_mode: 755
-    - file_mode: 644
+    - dir_mode: 775
+    - file_mode: 664
     - makedirs: True
     - require:
       - user: puyonexus
+    - recurse:
+      - user
+      - group
+      - mode
 
 
 # Volume mounts
@@ -31,6 +35,22 @@
     - require:
       - git: phpbb
       - file: /home/puyonexus/volumes/wiki-images
+
+
+# Cache directory
+/home/puyonexus/apps/wiki/mediawiki/cache:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 775
+    - file_mode: 664
+    - makedirs: True
+    - require:
+      - git: phpbb
+    - recurse:
+      - user
+      - group
+      - mode
 
 
 # Caddy configuration

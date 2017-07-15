@@ -80,7 +80,7 @@ $wgDBmysql5 = false;
 # Caching
 $wgMainCacheType = CACHE_NONE; # TODO
 $wgMemCachedServers = array();
-$wgCacheDirectory = '$IP/cache';
+$wgCacheDirectory = "$IP/cache";
 
 # Extensions
 require_once('./LocalSettings.Extensions.php');

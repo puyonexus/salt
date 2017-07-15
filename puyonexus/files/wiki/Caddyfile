@@ -7,5 +7,5 @@
 
 {$SITE_ROOT}/mediawiki/ {
   root /home/puyonexus/apps/wiki/mediawiki/
-  fastcgi / /var/run/php/php7.1-fpm.sock php
+  fastcgi / /var/run/php/php7.0-fpm.sock php
 }

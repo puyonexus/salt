@@ -45,7 +45,7 @@ caddy-binary:
     - name: /opt/caddy
     - user: root
     - group: root
-    - source: salt://puyonexus/files/caddy_v0.10.3_linux_amd64_custom.tar.gz
+    - source: salt://puyonexus/files/caddy/caddy_v0.10.3_linux_amd64_custom.tar.gz
     - archive_format: tar
 
 caddy-setcap:
@@ -59,7 +59,7 @@ caddy-setcap:
 
 /etc/systemd/system/caddy.service:
   file.managed:
-    - source: salt://puyonexus/files/caddy.service
+    - source: salt://puyonexus/files/caddy/caddy.service
     - user: root
     - group: root
     - mode: 644
@@ -68,7 +68,7 @@ caddy-setcap:
 
 /etc/caddy/Caddyfile:
   file.managed:
-    - source: salt://puyonexus/files/Caddyfile
+    - source: salt://puyonexus/files/caddy/Caddyfile
     - user: root
     - group: root
     - mode: 644

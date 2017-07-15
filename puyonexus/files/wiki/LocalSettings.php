@@ -68,7 +68,7 @@ $wgGroupPermissions['sysop']['abusefilter-modify-restricted'] = true;
 $wgGroupPermissions['sysop']['abusefilter-revert'] = true;
 
 # Database
-$wgDBtype = 'mysql';
+$wgDBtype = 'mysqli';
 $wgDBserver = '{{ salt["pillar.get"]("mysql:hostname") }}:3306';
 $wgDBname = '{{ salt["pillar.get"]("mysql:database") }}';
 $wgDBuser = '{{ salt["pillar.get"]("mysql:username") }}';

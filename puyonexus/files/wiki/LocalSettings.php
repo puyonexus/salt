@@ -4,7 +4,7 @@ if (!defined('MEDIAWIKI')) { exit; }
 
 # Load Raven
 require_once '/home/puyonexus/libs/raven-loader/index.php';
-setup_raven_logging('{{ salt["pillar.get"]("sentry:php:dsn") }}');
+setup_raven_logging('{{ salt["pillar.get"]("sentry:php:dsn").strip() }}');
 
 # Configuration
 $wgSitename = '{{ salt["pillar.get"]("mediawiki:sitename") }}';

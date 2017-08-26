@@ -3,6 +3,7 @@
   rewrite / {
     to {path} /index.php?{query}
   }
+  fastcgi / /var/run/php/php7.0-fpm.sock php
 }
 
 {$SITE_ROOT}/mediawiki/ {

@@ -1,0 +1,4 @@
+{$SITE_ROOT}/forum/ {
+  root /home/puyonexus/apps/forum/phpbb/phpBB/
+  fastcgi / /var/run/php/php7.0-fpm.sock php
+}

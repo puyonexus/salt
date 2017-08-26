@@ -9,7 +9,6 @@
     - require:
       - user: puyonexus
 
-
 # App volumes
 /home/puyonexus/volumes/forum-files:
   file.directory:
@@ -31,7 +30,6 @@
     - require:
       - user: puyonexus
 
-
 # Volume mounts
 /home/puyonexus/apps/forum/phpbb/phpBB/files:
   mount.mounted:
@@ -51,7 +49,6 @@
       - git: phpbb
       - file: /home/puyonexus/volumes/forum-avatars
 
-
 # App source code
 phpbb:
   git.latest:
@@ -61,7 +58,6 @@ phpbb:
     - require:
       - pkg: git
       - file: /home/puyonexus/apps/forum
-
 
 # Extensions
 /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus:
@@ -95,7 +91,6 @@ phpbb-ext-textenhancements:
       - git: phpbb
       - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus
 
-
 # Run composer (after getting everything else)
 phpbb-composer:
   composer.installed:
@@ -107,3 +102,25 @@ phpbb-composer:
       - git: phpbb
       - git: phpbb-ext-additions
       - git: phpbb-ext-textenhancements
+
+# Settings
+/home/puyonexus/apps/forum/phpbb/phpBB/config.php:
+  file.managed:
+    - user: puyonexus
+    - group: www-data
+    - source: salt://puyonexus/files/forum/config.php
+    - template: jinja
+    - require:
+      - git: phpbb
+
+# Caddy configuration
+/etc/caddy/sites/forum.conf:
+  file.managed:
+    - source: salt://puyonexus/files/forum/Caddyfile
+    - template: jinja
+    - user: root
+    - group: root
+    - mode: 644
+    - makedirs: True
+    - require_in:
+      - service: caddy

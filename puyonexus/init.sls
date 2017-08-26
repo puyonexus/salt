@@ -50,7 +50,7 @@ caddy-binary:
     - name: /opt/caddy
     - user: root
     - group: root
-    - source: salt://puyonexus/files/caddy/caddy_v0.10.3_linux_amd64_custom.tar.gz
+    - source: salt://puyonexus/files/caddy/caddy_v0.10.7_linux_amd64.tar.gz
     - archive_format: tar
 
 caddy-setcap:

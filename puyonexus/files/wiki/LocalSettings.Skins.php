@@ -8,6 +8,7 @@ wfLoadSkin('{{ skin }}');
 {% endfor %}
 
 # Vector settings
+$wgDefaultSkin = 'vectornerxus';
 $wgVectorUseSimpleSearch = true;
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;

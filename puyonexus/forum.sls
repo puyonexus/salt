@@ -30,6 +30,16 @@
     - require:
       - user: puyonexus
 
+/home/puyonexus/volumes/forum-cache:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 755
+    - file_mode: 644
+    - makedirs: True
+    - require:
+      - user: puyonexus
+
 # Volume mounts
 /home/puyonexus/apps/forum/phpbb/phpBB/files:
   mount.mounted:
@@ -48,6 +58,15 @@
     - require:
       - git: phpbb
       - file: /home/puyonexus/volumes/forum-avatars
+
+/home/puyonexus/apps/forum/phpbb/phpBB/cache:
+  mount.mounted:
+    - device: /home/puyonexus/volumes/forum-cache
+    - fstype: none
+    - opts: bind
+    - require:
+      - git: phpbb
+      - file: /home/puyonexus/volumes/forum-cache
 
 # App source code
 phpbb:

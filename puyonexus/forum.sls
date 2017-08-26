@@ -14,8 +14,8 @@
   file.directory:
     - user: puyonexus
     - group: www-data
-    - dir_mode: 755
-    - file_mode: 644
+    - dir_mode: 775
+    - file_mode: 664
     - makedirs: True
     - require:
       - user: puyonexus
@@ -24,8 +24,8 @@
   file.directory:
     - user: puyonexus
     - group: www-data
-    - dir_mode: 755
-    - file_mode: 644
+    - dir_mode: 775
+    - file_mode: 664
     - makedirs: True
     - require:
       - user: puyonexus
@@ -34,8 +34,8 @@
   file.directory:
     - user: puyonexus
     - group: www-data
-    - dir_mode: 755
-    - file_mode: 644
+    - dir_mode: 775
+    - file_mode: 664
     - makedirs: True
     - require:
       - user: puyonexus

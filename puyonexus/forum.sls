@@ -110,6 +110,16 @@ phpbb-ext-textenhancements:
       - git: phpbb
       - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus
 
+# Styles
+/home/puyonexus/apps/forum/phpbb/phpBB/styles/pronexus:
+  git.latest:
+    - name: https://github.com/puyonexus/phpbb-style-pronexus.git
+    - user: puyonexus
+    - target: /home/puyonexus/apps/forum/phpbb/phpBB/styles/pronexus
+    - require:
+      - pkg: git
+      - git: phpbb
+
 # Run composer (after getting everything else)
 phpbb-composer:
   composer.installed:

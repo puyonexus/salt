@@ -33,7 +33,7 @@
     - fstype: none
     - opts: bind
     - require:
-      - git: phpbb
+      - git: mediawiki
       - file: /home/puyonexus/volumes/wiki-images
 
 
@@ -46,7 +46,7 @@
     - file_mode: 664
     - makedirs: True
     - require:
-      - git: phpbb
+      - git: mediawiki
     - recurse:
       - user
       - group

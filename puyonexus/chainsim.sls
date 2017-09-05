@@ -61,6 +61,16 @@ puyosim-composer:
       - pkg: composer
       - git: puyosim
 
+# Settings
+/home/puyonexus/apps/chainsim/puyosim/config/localsettings.php:
+  file.managed:
+    - user: puyonexus
+    - group: www-data
+    - source: salt://puyonexus/files/chainsim/localsettings.php
+    - template: jinja
+    - require:
+      - git: puyosim
+
 # Caddy configuration
 /etc/caddy/sites/chainsim.conf:
   file.managed:

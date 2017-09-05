@@ -20,6 +20,17 @@
     - require:
       - user: puyonexus
 
+/home/puyonexus/volumes/chainsim-cache/cache:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 775
+    - file_mode: 664
+    - makedirs: True
+    - require:
+      - user: puyonexus
+      - file: /home/puyonexus/volumes/chainsim-cache
+
 # Volume mounts
 /home/puyonexus/apps/chainsim/puyosim/temp:
   mount.mounted:

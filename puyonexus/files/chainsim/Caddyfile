@@ -2,6 +2,7 @@
   root /home/puyonexus/apps/chainsim/puyosim/public/
   fastcgi / /var/run/php/php7.0-fpm.sock php
   rewrite {
-    to {path} {path}/ /index.php/{path}
+    if {path} not_starts_with /chainsim/assets
+    to /index.php
   }
 }

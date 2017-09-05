@@ -21,7 +21,7 @@
       - user: puyonexus
 
 # Volume mounts
-/home/puyonexus/apps/puyosim/temp:
+/home/puyonexus/apps/chainsim/puyosim/temp:
   mount.mounted:
     - device: /home/puyonexus/volumes/chainsim-cache
     - fstype: none

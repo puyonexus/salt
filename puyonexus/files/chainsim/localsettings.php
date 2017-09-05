@@ -10,3 +10,5 @@ $settings = [
         ],
     ]
 ];
+
+return $settings;

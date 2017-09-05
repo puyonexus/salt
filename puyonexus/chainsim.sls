@@ -9,6 +9,27 @@
     - require:
       - user: puyonexus
 
+# App volumes
+/home/puyonexus/volumes/chainsim-cache:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 775
+    - file_mode: 664
+    - makedirs: True
+    - require:
+      - user: puyonexus
+
+# Volume mounts
+/home/puyonexus/apps/puyosim/temp:
+  mount.mounted:
+    - device: /home/puyonexus/volumes/chainsim-cache
+    - fstype: none
+    - opts: bind
+    - require:
+      - git: puyosim
+      - file: /home/puyonexus/volumes/chainsim-cache
+
 # App source code
 puyosim:
   git.latest:

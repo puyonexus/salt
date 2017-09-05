@@ -1,5 +1,5 @@
 # Some packages. We could merge these but I like granular dependencies.
-{% for package in ['zsh', 'git', 'composer', 'php7.0-fpm', 'php7.0-mysql', 'libcap2'] %}
+{% for package in ['zsh', 'git', 'composer', 'php7.0-fpm', 'php7.0-mysql', 'php7.0-gd', 'libcap2'] %}
 {{ package }}:
   pkg.installed
 {% endfor %}

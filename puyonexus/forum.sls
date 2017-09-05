@@ -30,6 +30,16 @@
     - require:
       - user: puyonexus
 
+/home/puyonexus/volumes/forum-ranks:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 775
+    - file_mode: 664
+    - makedirs: True
+    - require:
+      - user: puyonexus
+
 /home/puyonexus/volumes/forum-cache:
   file.directory:
     - user: puyonexus
@@ -59,14 +69,29 @@
       - git: phpbb
       - file: /home/puyonexus/volumes/forum-avatars
 
+/home/puyonexus/apps/forum/phpbb/phpBB/images/ranks:
+  mount.mounted:
+    - device: /home/puyonexus/volumes/forum-ranks
+    - fstype: none
+    - opts: bind
+    - require:
+      - git: phpbb
+      - file: /home/puyonexus/volumes/forum-ranks
+
 /home/puyonexus/apps/forum/phpbb/phpBB/cache:
   mount.mounted:
     - device: /home/puyonexus/volumes/forum-cache
+    - dir_mode: 775
+    - file_mode: 664
     - fstype: none
     - opts: bind
     - require:
       - git: phpbb
       - file: /home/puyonexus/volumes/forum-cache
+    - recurse:
+      - user
+      - group
+      - mode
 
 # App source code
 phpbb:

@@ -1,0 +1,7 @@
+{$SITE_ROOT} {
+  root /home/puyonexus/apps/home/home/www/
+  fastcgi / /var/run/php/php7.0-fpm.sock php
+  proxy /files https://puyonexus-files.nyc3.digitaloceanspaces.com {
+    without /files
+  }
+}

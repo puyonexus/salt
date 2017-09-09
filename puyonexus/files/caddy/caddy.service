@@ -8,9 +8,9 @@ Environment=SITE_ROOT={{ salt['pillar.get']('site:root') }}
 Environment=CADDYPATH=/etc/ssl/caddy
 ExecStart=/opt/caddy/caddy -log stdout -agree -email support@puyonexus.com -conf /etc/caddy/Caddyfile
 ExecReload=/bin/kill -USR1 $MAINPID
-Restart=always
+Restart=no
 
-User=www-data
+User=puyonexus
 Group=www-data
 
 LimitNOFILE=1048576

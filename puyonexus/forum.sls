@@ -113,6 +113,28 @@ phpbb:
       - git: phpbb
       - user: puyonexus
 
+/home/puyonexus/apps/forum/phpbb/phpBB/ext/paybas:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 755
+    - file_mode: 644
+    - makedirs: True
+    - require:
+      - git: phpbb
+      - user: puyonexus
+
+/home/puyonexus/apps/forum/phpbb/phpBB/ext/phpbb:
+  file.directory:
+    - user: puyonexus
+    - group: www-data
+    - dir_mode: 755
+    - file_mode: 644
+    - makedirs: True
+    - require:
+      - git: phpbb
+      - user: puyonexus
+
 phpbb-ext-additions:
   git.latest:
     - name: https://github.com/puyonexus/phpbb-ext-additions.git
@@ -132,6 +154,26 @@ phpbb-ext-textenhancements:
       - pkg: git
       - git: phpbb
       - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/puyonexus
+
+phpbb-ext-recenttopics:
+  git.latest:
+    - name: https://github.com/puyonexus/phpbb-ext-recenttopics.git
+    - user: puyonexus
+    - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/paybas/recenttopics
+    - require:
+      - pkg: git
+      - git: phpbb
+      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/paybas
+
+phpbb-ext-mediaembed:
+  git.latest:
+    - name: https://github.com/puyonexus/phpbb-ext-textenhancements.git
+    - user: puyonexus
+    - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/phpbb/mediaembed
+    - require:
+      - pkg: git
+      - git: phpbb
+      - file: /home/puyonexus/apps/forum/phpbb/phpBB/ext/phpbb
 
 # Styles
 /home/puyonexus/apps/forum/phpbb/phpBB/styles/pronexus:

@@ -167,7 +167,7 @@ phpbb-ext-recenttopics:
 
 phpbb-ext-mediaembed:
   git.latest:
-    - name: https://github.com/puyonexus/phpbb-ext-textenhancements.git
+    - name: https://github.com/puyonexus/phpbb-ext-mediaembed.git
     - user: puyonexus
     - target: /home/puyonexus/apps/forum/phpbb/phpBB/ext/phpbb/mediaembed
     - require:

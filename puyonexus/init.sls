@@ -38,7 +38,7 @@ oh-my-zsh:
       - 'plugins=(git)'
       - 'source $ZSH/oh-my-zsh.sh'
 
-/etc/ssl/caddy
+/etc/ssl/caddy:
   file.directory:
     - user: www-data
     - group: www-data

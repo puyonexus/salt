@@ -6,3 +6,7 @@
   }
   import "../common.conf"
 }
+
+:80 {
+	redir https://{host}{uri}
+}

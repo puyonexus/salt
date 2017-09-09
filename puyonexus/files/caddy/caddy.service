@@ -9,8 +9,9 @@ Environment=CADDYPATH=/etc/ssl/caddy
 ExecStart=/opt/caddy/caddy -log stdout -agree -email support@puyonexus.com -conf /etc/caddy/Caddyfile
 ExecReload=/bin/kill -USR1 $MAINPID
 Restart=no
+RestartPreventExitStatus=1
 
-User=puyonexus
+User=www-data
 Group=www-data
 
 LimitNOFILE=1048576

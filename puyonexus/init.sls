@@ -83,6 +83,17 @@ caddy-setcap:
     - require_in:
       - service: caddy
 
+/etc/caddy/common.conf:
+  file.managed:
+    - source: salt://puyonexus/files/caddy/common.conf
+    - template: jinja
+    - user: root
+    - group: root
+    - mode: 644
+    - makedirs: True
+    - require_in:
+      - service: caddy
+
 caddy:
   service.running:
     - enable: true

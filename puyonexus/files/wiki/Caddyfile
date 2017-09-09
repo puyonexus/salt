@@ -4,9 +4,11 @@
     to {path} /index.php?{query}
   }
   fastcgi / /var/run/php/php7.0-fpm.sock php
+  import "../common.conf"
 }
 
 {$SITE_ROOT}/mediawiki {
   root /home/puyonexus/apps/wiki/mediawiki/
   fastcgi / /var/run/php/php7.0-fpm.sock php
+  import "../common.conf"
 }

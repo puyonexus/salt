@@ -47,6 +47,10 @@
     - dir_mode: 775
     - file_mode: 664
     - makedirs: True
+    - recurse:
+      - user
+      - group
+      - mode
     - require:
       - user: puyonexus
 
@@ -81,17 +85,11 @@
 /home/puyonexus/apps/forum/phpbb/phpBB/cache:
   mount.mounted:
     - device: /home/puyonexus/volumes/forum-cache
-    - dir_mode: 775
-    - file_mode: 664
     - fstype: none
     - opts: bind
     - require:
       - git: phpbb
       - file: /home/puyonexus/volumes/forum-cache
-    - recurse:
-      - user
-      - group
-      - mode
 
 # App source code
 phpbb:

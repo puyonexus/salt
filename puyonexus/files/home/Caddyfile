@@ -4,4 +4,5 @@
   proxy /files https://puyonexus-files.nyc3.digitaloceanspaces.com {
     without /files
   }
+  import "../common.conf"
 }

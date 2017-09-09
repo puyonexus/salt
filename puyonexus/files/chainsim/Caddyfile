@@ -1,4 +1,4 @@
-{$SITE_ROOT}/chainsim {
+{$SITE_ROOT}/chainsim/ {
   root /home/puyonexus/apps/chainsim/puyosim/public/
   fastcgi / /var/run/php/php7.0-fpm.sock php
   rewrite {

@@ -1,4 +1,4 @@
-{$SITE_ROOT}/wiki {
+{$SITE_ROOT}/wiki/ {
   root /home/puyonexus/apps/wiki/mediawiki/
   rewrite / {
     to {path} /index.php?{query}
@@ -7,7 +7,7 @@
   import "../common.conf"
 }
 
-{$SITE_ROOT}/mediawiki {
+{$SITE_ROOT}/mediawiki/ {
   root /home/puyonexus/apps/wiki/mediawiki/
   fastcgi / /var/run/php/php7.0-fpm.sock php
   import "../common.conf"

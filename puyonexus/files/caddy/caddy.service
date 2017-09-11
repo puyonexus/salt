@@ -5,6 +5,7 @@ Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
 Environment=SITE_ROOT={{ salt['pillar.get']('site:root') }}
+Environment=WWW_ROOT={{ salt['pillar.get']('site:www_root') }}
 Environment=CADDYPATH=/etc/ssl/caddy
 ExecStart=/opt/caddy/caddy -log stdout -agree -email support@puyonexus.com -conf /etc/caddy/Caddyfile
 ExecReload=/bin/kill -USR1 $MAINPID
